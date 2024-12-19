@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		654B1E8D2D144C0B005D3AFF /* myFiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1E8C2D144C0B005D3AFF /* myFiveApp.swift */; };
-		654B1E8F2D144C0B005D3AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1E8E2D144C0B005D3AFF /* ContentView.swift */; };
 		654B1E912D144C0E005D3AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654B1E902D144C0E005D3AFF /* Assets.xcassets */; };
 		654B1E942D144C0E005D3AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654B1E932D144C0E005D3AFF /* Preview Assets.xcassets */; };
 		654B1E9C2D144E5D005D3AFF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1E9B2D144E5D005D3AFF /* UserModel.swift */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		654B1E892D144C0B005D3AFF /* myFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		654B1E8C2D144C0B005D3AFF /* myFiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFiveApp.swift; sourceTree = "<group>"; };
-		654B1E8E2D144C0B005D3AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		654B1E902D144C0E005D3AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654B1E932D144C0E005D3AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		654B1E9B2D144E5D005D3AFF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				654B1EAE2D14547E005D3AFF /* View */,
 				654B1EA92D1452DB005D3AFF /* ViewModel */,
 				654B1E8C2D144C0B005D3AFF /* myFiveApp.swift */,
-				654B1E8E2D144C0B005D3AFF /* ContentView.swift */,
 				654B1E902D144C0E005D3AFF /* Assets.xcassets */,
 				654B1E922D144C0E005D3AFF /* Preview Content */,
 			);
@@ -217,7 +214,6 @@
 			files = (
 				654B1EA52D1451D5005D3AFF /* FetchUsersUseCase.swift in Sources */,
 				654B1E9E2D14505F005D3AFF /* AddressModel.swift in Sources */,
-				654B1E8F2D144C0B005D3AFF /* ContentView.swift in Sources */,
 				654B1EB52D146AA7005D3AFF /* ColorExtension.swift in Sources */,
 				654B1EA82D1452C1005D3AFF /* APIClient.swift in Sources */,
 				654B1E9C2D144E5D005D3AFF /* UserModel.swift in Sources */,

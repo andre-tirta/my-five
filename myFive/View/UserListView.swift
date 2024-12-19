@@ -45,6 +45,7 @@ struct UserListView: View {
                             },
                             alignment: .trailing
                         )
+                        .background(Color.white)
                     
                     Button(action: {
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -58,6 +59,25 @@ struct UserListView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 17)
                 
+                Text(viewModel.searchText.isEmpty ? "ALL USERS" : "SEARCH RESULTS")
+                    .font(.system(size: 16, weight: .semibold))
+                    .padding(.top)
+                    .padding(.bottom)
+                    .padding(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.white)
+                    .overlay(
+                        VStack {
+                            Rectangle()
+                                .frame(height: 1) // Top border
+                                .foregroundColor(Color.black)
+                            Spacer()
+                            Rectangle()
+                                .frame(height: 1) // Bottom border
+                                .foregroundColor(Color.black)
+                        }
+                    )
+                
                 if viewModel.isLoading {
                     ProgressView("Loading users...")
                 } else if let errorMessage = viewModel.errorMessage {
@@ -66,16 +86,22 @@ struct UserListView: View {
                 } else {
                     List(viewModel.filteredUsers) { user in
                         UserCell(user: user)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 70)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.black, lineWidth: 1)
                             )
                             .cornerRadius(10)
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
                     }
-                    .listRowSeparator(.hidden)
-                    
+                    .listStyle(PlainListStyle())
+                    .scrollContentBackground(.hidden)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(hex: "#F9F5F2"))
             .navigationTitle("Users")
         }
         .onAppear {
@@ -83,3 +109,17 @@ struct UserListView: View {
         }
     }
 }
+
+#Preview {
+    let baseURL: URL = {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com") else {
+            fatalError("Invalid URL string")
+        }
+        return url
+    }()
+    let apiClient = APIClient(baseURL: baseURL)
+    let fetchUsersUseCase = FetchUsersUseCase(apiClient: apiClient)
+    let userViewModel = UserViewModel(fetchUsersUseCase: fetchUsersUseCase)
+    return UserListView(viewModel: userViewModel)
+}
+

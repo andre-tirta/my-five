@@ -13,7 +13,7 @@ struct UserCell: View {
     let user: User
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             if let url = URL(string: "https://i.pravatar.cc/150") {
                 AsyncImage(url: url) { image in
                     image
@@ -21,6 +21,10 @@ struct UserCell: View {
                         .scaledToFill()
                         .frame(width: 40, height: 40)
                         .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 1)
+                        )
                 } placeholder: {
                     ProgressView()
                 }
@@ -41,6 +45,9 @@ struct UserCell: View {
                         .font(.subheadline)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding()
+        .background(Color.white)
     }
 }
