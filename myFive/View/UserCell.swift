@@ -11,6 +11,7 @@ import SwiftUI
 // MARK: - UserCell
 struct UserCell: View {
     let user: User
+    @Binding var searchText: String
     
     var body: some View {
         HStack(alignment: .top) {
@@ -46,6 +47,14 @@ struct UserCell: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            
+            if !searchText.isEmpty {
+                Image("addUser")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
+            }
         }
         .padding()
         .background(Color.white)

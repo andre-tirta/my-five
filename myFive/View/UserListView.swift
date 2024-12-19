@@ -85,7 +85,7 @@ struct UserListView: View {
                         .foregroundColor(.red)
                 } else {
                     List(viewModel.filteredUsers) { user in
-                        UserCell(user: user)
+                        UserCell(user: user, searchText: $viewModel.searchText)
                             .frame(maxWidth: .infinity)
                             .frame(height: 70)
                             .overlay(
