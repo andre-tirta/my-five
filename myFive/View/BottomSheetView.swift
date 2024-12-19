@@ -20,89 +20,93 @@ struct BottomSheetView: View {
         VStack {
             UserProfileHeaderView()
                 
-            if let url = URL(string: "https://i.pravatar.cc/1000") {
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 250, height: 250)
-                        .clipShape(Circle())
-                        .overlay(
-                            Circle()
-                                .stroke(Color.black, lineWidth: 1)
-                        )
-                        .padding(.top, 30)
-                } placeholder: {
-                    ProgressView()
-                }
-                .shadow(color: Color(hex: "#F7D6B4"), radius: 5, x: 2, y: 3)
-            } else {
-                Circle()
-                    .fill(Color.gray)
-                    .frame(width: 40, height: 40)
-            }
-            
-            Text(user.name ?? "Unknown")
-                .font(.system(size: 32, weight: .semibold))
-                .padding()
-            
-            VStack {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    Text("USERNAME")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(user.username ?? "-")
-                        .font(.system(size: 16, weight: .regular))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("EMAIL")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(user.email ?? "-")
-                        .font(.system(size: 16, weight: .regular))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("ADDRESS")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .frame(maxHeight: .infinity, alignment: .top)
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(user.address?.street ?? "-")
-                            .font(.system(size: 16, weight: .regular))
-                        Text(user.address?.suite ?? "-")
-                            .font(.system(size: 16, weight: .regular))
-                        Text(user.address?.zipcode ?? "-")
-                            .font(.system(size: 16, weight: .regular))
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    if let url = URL(string: "https://i.pravatar.cc/1000") {
+                        AsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 250, height: 250)
+                                .clipShape(Circle())
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
+                                .padding(.top, 30)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .shadow(color: Color(hex: "#F7D6B4"), radius: 5, x: 2, y: 3)
+                    } else {
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 40, height: 40)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     
+                    Text(user.name ?? "Unknown")
+                        .font(.system(size: 32, weight: .semibold))
+                        .padding()
                     
-                    Text("PHONE")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(user.phone ?? "-")
-                        .font(.system(size: 16, weight: .regular))
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    VStack {
+                        LazyVGrid(columns: columns, spacing: 10) {
+                            Text("USERNAME")
+                                .font(.system(size: 16, weight: .semibold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text(user.username ?? "-")
+                                .font(.system(size: 16, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Text("EMAIL")
+                                .font(.system(size: 16, weight: .semibold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text(user.email ?? "-")
+                                .font(.system(size: 16, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Text("ADDRESS")
+                                .font(.system(size: 16, weight: .semibold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxHeight: .infinity, alignment: .top)
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(user.address?.street ?? "-")
+                                    .font(.system(size: 16, weight: .regular))
+                                Text(user.address?.suite ?? "-")
+                                    .font(.system(size: 16, weight: .regular))
+                                Text(user.address?.zipcode ?? "-")
+                                    .font(.system(size: 16, weight: .regular))
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            
+                            Text("PHONE")
+                                .font(.system(size: 16, weight: .semibold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text(user.phone ?? "-")
+                                .font(.system(size: 16, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Text("WEBSITE")
+                                .font(.system(size: 16, weight: .semibold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text(user.website ?? "-")
+                                .font(.system(size: 16, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding()
+                    }
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                    .cornerRadius(10)
+                    .padding()
                     
-                    Text("WEBSITE")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(user.website ?? "-")
-                        .font(.system(size: 16, weight: .regular))
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
                 }
-                .padding()
-
             }
-            .background(Color.white)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1)
-            )
-            .cornerRadius(10)
-            .padding()
             
-            Spacer()
         }
         .frame(maxWidth: .infinity)
         .background(Color(hex: "#F9F5F2"))

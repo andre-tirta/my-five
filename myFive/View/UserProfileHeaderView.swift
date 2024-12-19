@@ -39,6 +39,7 @@ struct UserProfileHeaderView: View {
             }
             .frame(height: 80)
         }
+        .padding(.top, 5)
         .background(Color.white)
     }
 }
