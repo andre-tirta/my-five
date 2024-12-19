@@ -20,6 +20,8 @@
 		654B1EB02D14548D005D3AFF /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1EAF2D14548D005D3AFF /* UserListView.swift */; };
 		654B1EB22D145667005D3AFF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1EB12D145667005D3AFF /* UserCell.swift */; };
 		654B1EB52D146AA7005D3AFF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1EB42D146AA7005D3AFF /* ColorExtension.swift */; };
+		654B1EB72D147D24005D3AFF /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1EB62D147D24005D3AFF /* BottomSheetView.swift */; };
+		654B1EB92D14819C005D3AFF /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B1EB82D14819C005D3AFF /* UserProfileHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		654B1EAF2D14548D005D3AFF /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		654B1EB12D145667005D3AFF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		654B1EB42D146AA7005D3AFF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		654B1EB62D147D24005D3AFF /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		654B1EB82D14819C005D3AFF /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +132,10 @@
 		654B1EAE2D14547E005D3AFF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				654B1EAF2D14548D005D3AFF /* UserListView.swift */,
+				654B1EB62D147D24005D3AFF /* BottomSheetView.swift */,
 				654B1EB12D145667005D3AFF /* UserCell.swift */,
+				654B1EAF2D14548D005D3AFF /* UserListView.swift */,
+				654B1EB82D14819C005D3AFF /* UserProfileHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,10 +223,12 @@
 				654B1EB52D146AA7005D3AFF /* ColorExtension.swift in Sources */,
 				654B1EA82D1452C1005D3AFF /* APIClient.swift in Sources */,
 				654B1E9C2D144E5D005D3AFF /* UserModel.swift in Sources */,
+				654B1EB72D147D24005D3AFF /* BottomSheetView.swift in Sources */,
 				654B1EA02D145070005D3AFF /* GeoModel.swift in Sources */,
 				654B1EB02D14548D005D3AFF /* UserListView.swift in Sources */,
 				654B1EB22D145667005D3AFF /* UserCell.swift in Sources */,
 				654B1E8D2D144C0B005D3AFF /* myFiveApp.swift in Sources */,
+				654B1EB92D14819C005D3AFF /* UserProfileHeaderView.swift in Sources */,
 				654B1EAB2D14530B005D3AFF /* UserViewModel.swift in Sources */,
 				654B1EA22D145087005D3AFF /* CompanyModel.swift in Sources */,
 			);

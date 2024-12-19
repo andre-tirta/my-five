@@ -12,6 +12,7 @@ import SwiftUI
 struct UserCell: View {
     let user: User
     @Binding var searchText: String
+    @State private var isBottomSheetPresented = false
     
     var body: some View {
         HStack(alignment: .top) {
@@ -58,5 +59,11 @@ struct UserCell: View {
         }
         .padding()
         .background(Color.white)
+        .onTapGesture {
+            isBottomSheetPresented.toggle()
+        }
+        .sheet(isPresented: $isBottomSheetPresented) {
+            BottomSheetView(user: user)
+        }
     }
 }
