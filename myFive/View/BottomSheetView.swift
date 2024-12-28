@@ -116,23 +116,23 @@ struct BottomSheetView: View {
     }
 }
 
-#Preview {
-    BottomSheetView(
-        user: User(
-            id: 1,
-            name: "Tom Riordan",
-            username: "worm",
-            email: "tom@gmail.com",
-            phone: "(123) 456-7890",
-            website: "tomriordan.com",
-            address: Address(
-                street: "123 Main St",
-                suite: "Apt 1",
-                city: "Town",
-                zipcode: "12345-1234",
-                geo: nil
-            ),
-            company: nil
-        )
-    )
-}
+//#Preview {
+//    BottomSheetView(
+//        user: User(
+//            id: 1,
+//            name: "Tom Riordan",
+//            username: "worm",
+//            email: "tom@gmail.com",
+//            phone: "(123) 456-7890",
+//            website: "tomriordan.com",
+//            address: Address(
+//                street: "123 Main St",
+//                suite: "Apt 1",
+//                city: "Town",
+//                zipcode: "12345-1234",
+//                geo: nil
+//            ),
+//            company: nil
+//        )
+//    )
+//}
