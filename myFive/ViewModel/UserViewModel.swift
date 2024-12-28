@@ -43,7 +43,20 @@ class UserViewModel: ObservableObject {
             })
             .store(in: &cancellables)
     }
-    
+
+    func refreshUsers() async {
+        do {
+            let users = try await fetchUsersUseCase.execute().asyncSink()
+            DispatchQueue.main.async {
+                self.users = users
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+
     private func setupSearchListener() {
         $searchText
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)

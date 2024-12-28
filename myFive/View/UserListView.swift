@@ -96,6 +96,9 @@ struct UserListView: View {
                             .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)
                     }
+                    .refreshable {
+                        await refreshUsers()
+                    }
                     .listStyle(PlainListStyle())
                     .scrollContentBackground(.hidden)
                 }
@@ -105,8 +108,14 @@ struct UserListView: View {
             .navigationTitle("Users")
         }
         .onAppear {
-            viewModel.fetchUsers()
+            if viewModel.users.isEmpty {
+                viewModel.fetchUsers()
+            }
         }
+    }
+
+    private func refreshUsers() async {
+        await viewModel.refreshUsers()
     }
 }
 
